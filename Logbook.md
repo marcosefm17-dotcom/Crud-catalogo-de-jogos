@@ -29,7 +29,7 @@
 | **Professor** | Rondineli Seba Salomão |
 | **App-base do meu CRUD** | Catálogo de Jogos|
 | **Link do meu repositório** | _https://github.com/…_ |
-| **Dupla de revisão (Campo 05)** | _nome do colega cujo CRUD vou revisar / que revisa o meu_ |
+| **Dupla de revisão (Campo 05)** | Maria Luiza
 | **Função neste ciclo** | _Autor do meu CRUD · Revisor do CRUD de um colega_ |
 
 ---
@@ -164,10 +164,10 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 **Checklist do Grupo 1**
 - [x] Identificação preenchida (app-base, link do repositório, dupla de revisão)
-- [ ] Campo 01: 3 objetos de conhecimento, 3 lacunas, hipótese de até 5 linhas
-- [ ] Registros dos Ciclos 01, 02, 03 e 04 com os 7 itens
-- [ ] Campo 02: 2 referências com contribuição, hipótese revisada, 3 recursos
-- [ ] Commits no GitHub e painel atualizado
+- [x ] Campo 01: 3 objetos de conhecimento, 3 lacunas, hipótese de até 5 linhas
+- [x ] Registros dos Ciclos 01, 02, 03 e 04 com os 7 itens
+- [x ] Campo 02: 2 referências com contribuição, hipótese revisada, 3 recursos
+- [x ] Commits no GitHub e painel atualizado
 
 ## 🟢 CICLO 01 — 12/08 — Preparação do laboratório e escolha do projeto
 
@@ -234,19 +234,25 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 **2a. Aprofundamento dos objetos de conhecimento (mínimo 2 referências com síntese da contribuição para a solução):**
 
-- **Referência 1:** _…_ — **Contribuição:** _…_
-- **Referência 2:** _…_ — **Contribuição:** _…_
+- **Referência 1:** _DOWNEY, Allen B. *Pense em Python: Pense como um cientista da computação* (Capítulos 2 e 8 — Variáveis, expressões, instruções e strings). — **Contribuição:** Esclareceu a tipagem dinâmica do Python, o comportamento da função nativa `input()` (que sempre retorna `str`), a necessidade de conversão explícita (*type casting*) com `int()` e `float()` antes de validações numéricas, e o uso de métodos de string como `.strip()` para higienizar espaços em branco na entrada de títulos._ — **Contribuição:** _…_
+- **Referência 2:** _…_ — **Contribuição:** _Documentação Oficial do Python (`docs.python.org/pt-br/3/tutorial/errors.html` — Erros e Exceções). — **Contribuição:** Demonstrou como o tratamento de exceções com blocos `try` e `except ValueError` intercepta falhas de conversão de tipos em tempo de execução, impedindo que o programa aborte quando o usuário digita caracteres não numéricos nos campos `ano` ou `nota`.
+
+**2b. Hipótese revisada — o que mudou em relação ao Campo 01 e por quê:**A pesquisa confirmou a hipótese inicial de que a falta de conversão explícita da saída de `input()` causa `ValueError` e `TypeError`, mas aprofundou a compreensão técnica ao evidenciar que apenas estruturas condicionais (`if/else`) não bastam para evitar a quebra do programa durante a conversão de texto para número. Para garantir resiliência na entrada de dados, é necessário combinar sanitização de strings (`.strip()`), blocos de tratamento de exceções (`try/except`) para capturar falhas de tipo e validações condicionais de domínio (faixas válidas de ano entre 1970 e 2026 e nota entre 0 e 10).
 
 **2b. Hipótese revisada — o que mudou em relação ao Campo 01 e por quê:**
 
 > _…_
 
-**2c. Dimensionamento inicial de recursos (recurso, quantidade estimada, justificativa técnica — mínimo 3 itens):**
+**2c. Dimensionamento inicial de recursos (recurso, quantidade estimada, justificativa técnica — mínimo 3 itens):** RECURSO / MATERIAL / INSUMO | QUANTIDADE ESTIMADA | JUSTIFICATIVA TÉCNICA |
+|---|---|---|
+| Casos de teste de entrada (válidos, vazios, fora de faixa e tipos incorretos) | 12 casos de teste (4 por atributo: título, ano e nota) | Validar isoladamente o comportamento de conversão de tipos (`str` → `int`/`float`), tratamento de `ValueError` e limites de domínio antes de persistir o registro na memória. |
+| Estrutura de dados em memória (lista principal + dicionários por registro) | 1 lista (`catalogo`) contendo até 20 dicionários de teste | Permitir o armazenamento estruturado dos 3 atributos (`titulo`, `ano`, `nota`) com acesso rápido por chave e iteração indexada nas operações do CRUD. |
+| Horas de estudo, codificação e depuração incremental no VS Code | 8 horas distribuídas ao longo dos ciclos | Cobrir leitura da documentação/livro, implementação incremental das 4 operações do CRUD, testes de borda no terminal e refatoração modular. |
 
 | RECURSO / MATERIAL / INSUMO | QUANTIDADE ESTIMADA | JUSTIFICATIVA TÉCNICA |
 |---|---|---|
-| _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ |
+| _Aulas sobre variáveis_ | _2 aulas_ | _aprender sobre variáveis_ |
+| _praticar programação_ | _2 dias_ | _praticar os conteúdos_ |
 | _…_ | _…_ | _…_ |
 | _…_ | _…_ | _…_ |
 
