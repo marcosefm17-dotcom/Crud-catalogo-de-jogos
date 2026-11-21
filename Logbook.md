@@ -182,13 +182,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 01 — 12/08
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Configurar o ambiente de desenvolvimento (interpretador Python, IDE VS Code e repositório Git/GitHub)…_
+2. **O que implementei (commits / arquivos / links):** _Criação do repositório remoto no GitHub, estruturação inicial do arquivo `LOGBOOK.md` na raiz do projeto, configuração do diretório local (`Catálogo de jogos`) e criação do arquivo base `main.py`_
+3. **Objeto(s) de conhecimento mobilizado(s):** _…Configuração de ambiente de execução (interpretador Python e variável de ambiente `PATH`), controle de versão distribuído (repositório Git, commits e sincronização com GitHub), navegação em interface de linha de comando (CLI / PowerShell) e definição de esquema de dados (*schema* com tipos `str`, `int` e `float` para título, ano e nota)._
+4. **Desvio ou erro encontrado + causa técnica:** _…O VS Code não exibia a opção de execução do script (`Select Python Interpreter`) e o terminal PowerShell não reconhecia o comando do interpretador. Causa técnica: ausência da instalação local do interpretador Python adicionada ao `PATH` do sistema e abertura do terminal no diretório raiz do usuário.
+5. **Decisão de ajuste + fonte:** _Instalação oficial do Python marcando a opção *Add python.exe to PATH*, seleção do interpretador na barra de status do VS Code, navegação até a pasta correta via comando `cd` no PowerShell e execução direta com `py main.py`. Fonte: Documentação oficial do Python (`docs.python.org`), documentação do VS Code (*Python in VS Code*) e apoio de IA para diagnóstico do terminal._
+6. **Feedback recebido e o que mudei:** _Orientação do protocolo da disciplina para manter o arquivo de registro padronizado como `LOGBOOK.md` na raiz do repositório e registrar problemas reais de configuração de ambiente como evidência de processo._
+7. **Próximo passo:** _Resolver problemas na alteração dos nomes e notas dos jogos_
 
 ## 🟢 CICLO 02 — 19/08 — Variáveis, tipos de dados e entrada/saída
 
