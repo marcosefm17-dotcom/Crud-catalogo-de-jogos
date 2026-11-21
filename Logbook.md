@@ -28,7 +28,7 @@
 | **Unidade curricular** | Algoritmos e Programação — UnDB 2026.2 |
 | **Professor** | Rondineli Seba Salomão |
 | **App-base do meu CRUD** | Catálogo de Jogos|
-| **Link do meu repositório** | _https://github.com/…_ |
+| **Link do meu repositório** | [_https://github.com/…](https://github.com/marcosefm17-dotcom/Crud-catalogo-de-jogos)_ |
 | **Dupla de revisão (Campo 05)** | Maria Luiza
 | **Função neste ciclo** | _Autor do meu CRUD · Revisor do CRUD de um colega_ |
 
