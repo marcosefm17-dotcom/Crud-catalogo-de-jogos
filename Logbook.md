@@ -291,13 +291,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 04 — 02/09
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):*Estruturar o roteamento de opções do menu principal e as regras de negócio de validação de dados utilizando desvios condicionais encadeados (`if`, `elif`, `else`).* _…_
+2. **O que implementei (commits / arquivos / links):** _Implementação da cadeia condicional do menu (`if opcao == "1":` até `elif opcao == "0":` e `else:` para opções inválidas) e das validações de domínio de título, ano, nota e existência de registros no arquivo `main.py` (commit: `docs(logbook): registro do ciclo 04`)._
+3. **Objeto(s) de conhecimento mobilizado(s):** _Estruturas de seleção/decisão (`if`, `elif`, `else`), controle de fluxo em laços (`continue` e `break`), verificação de comprimento de coleção (`len(catalogo) == 0`) e alinhamento por indentação obrigatória em Python._
+4. **Desvio ou erro encontrado + causa técnica:** _Ao testar entradas com defeito, registros com título composto apenas por espaços (`"   "`), anos anteriores a 1970 (ex.: `1950`), notas acima de 10 (ex.: `12`) ou opções inexistentes no menu (ex.: `"9"`) quebravam as regras de negócio ou causavam comportamento inesperado. Além disso, houve erro de indentação (`IndentationError` / bloco ignorado) nos ramos `elif opcao == "3":` e `elif opcao == "4":`. Causa técnica: ausência de cláusula `else` final para capturar opções fora do intervalo `"0"` a `"4"`, falta de verificação prévia de lista vazia (`len(catalogo) == 0`) antes de listar/editar/excluir, e desalinhamento de espaços à esquerda nos blocos `elif`. Esse cenário já havia sido parcialmente previsto no dimensionamento de 12 casos de teste de borda do Campo 02._
+5. **Decisão de ajuste + fonte:** _Conectar cada condicional a uma regra de negócio explícita (`titulo == ""` após `.strip()`, `ano < 1970 or ano > 2026`, `nota < 0 or nota > 10` e `len(catalogo) == 0`), padronizar a indentação em 4 espaços e incluir o bloco `else:` final no menu. Fonte: DOWNEY, Allen B. *Pense em Python* (Capítulo 5 — Condicionais e recursividade) e Documentação Oficial do Python (*Mais ferramentas de controle de fluxo*)._
+6. **Feedback recebido e o que mudei:** _Orientação do protocolo do Ciclo 04 para vincular cada estrutura condicional a uma regra de negócio clara do domínio e comparar os desvios encontrados com os testes planejados no Campo 02._
+7. **Próximo passo:** _Atualizar os checkboxes do Grupo 1 no Painel de Acompanhamento_
 
 ---
 
