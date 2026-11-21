@@ -251,13 +251,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 | _…_ | _…_ | _…_ |
 
 #### Registro do Ciclo 02 — 19/08
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Implementar a leitura segura dos dados de entrada (`titulo`, `ano` e `nota`) no Catálogo de Jogos, garantindo a conversão correta dos tipos primitivos e evitando que entradas inválidas encerrem a execução do programa._
+2. **O que implementei (commits / arquivos / links):** _Implementação do fluxo inicial de entrada e saída (`input`/`print`), sanitização de texto com `.strip()`, conversão de tipos com `int()` e `float()`, e validação inicial de exceções com `try/except ValueError` no arquivo `main.py` (commit: `docs(logbook): campo 02 e registro do ciclo 02`)._
+3. **Objeto(s) de conhecimento mobilizado(s):** _Variáveis e tipos primitivos (`str`, `int`, `float`), entrada e saída padrão (`input()`, `print()`), conversão explícita de tipos (*type casting*), manipulação de strings (`.strip()`) e tratamento básico de exceções (`try/except ValueError`)._
+4. **Desvio ou erro encontrado + causa técnica:** _Ao testar o cadastro digitando letras ou deixando o campo em branco no ano de lançamento ou na nota, o programa interrompia com `ValueError: invalid literal for int() with base 10`. Causa técnica: a função `input()` retorna uma `str`, e a conversão direta via `int()` ou `float()` sem tratamento de exceção não consegue converter cadeias não numéricas ou vazias_
+5. **Decisão de ajuste + fonte:** _Ao testar o cadastro digitando letras ou deixando o campo em branco no ano de lançamento ou na nota, o programa interrompia com `ValueError: invalid literal for int() with base 10`. Causa técnica: a função `input()` retorna uma `str`, e a conversão direta via `int()` ou `float()` sem tratamento de exceção não consegue converter cadeias não numéricas ou vazias_
+6. **Feedback recebido e o que mudei:** _Orientação para não confiar apenas na entrada ideal do usuário e sempre testar casos de borda (entradas vazias e tipos trocados), motivando a inclusão imediata de verificações de string vazia e tratamento de `ValueError`._
+7. **Próximo passo:** _Resolver problema de ao salvar informações dos jogos._
 
 ## 🟢 CICLO 03 — 26/08 — Operadores, fluxogramas e paradigmas
 
