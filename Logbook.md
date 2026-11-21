@@ -253,8 +253,8 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 |---|---|---|
 | _Aulas sobre variáveis_ | _2 aulas_ | _aprender sobre variáveis_ |
 | _praticar programação_ | _2 dias_ | _praticar os conteúdos_ |
-| _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ |
+| _pasta main.py_ | _organizar pasta _ | _melhorar o cóigo_ |
+| _repositório no git hub_ | _1 repositório_ | _salvar projeto e atualizar continuamente_ |
 
 #### Registro do Ciclo 02 — 19/08
 1. **Desafio do ciclo (em 1 frase):** _Implementar a leitura segura dos dados de entrada (`titulo`, `ano` e `nota`) no Catálogo de Jogos, garantindo a conversão correta dos tipos primitivos e evitando que entradas inválidas encerrem a execução do programa._
