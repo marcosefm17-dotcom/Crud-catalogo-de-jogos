@@ -446,13 +446,16 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 05 — 09/09
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Combinar condicionais aninhadas e operadores lógicos (`or`, `and`) para validar regras de domínio e evitar operações em catálogo vazio._
+2. **O que implementei (commits / arquivos / links):** _Condicionais aninhadas (`if len(catalogo) == 0:` seguido de `else:` e validação de faixa com `or`) nos ramos de cadastro, atualização e exclusão do `main.py` (commit: `docs(logbook)_
+3. **Objeto(s) de conhecimento mobilizado(s):** _Estruturas condicionais aninhadas (`if` dentro de `else`), operadores lógicos (`or`, `and`) e operadores relacionais (`<`, `>`, `<=`, `>=`, `==`).
+_
+4. **Desvio ou erro encontrado + causa técnica:**Ao tentar atualizar ou excluir com a lista vazia, o programa solicitava o índice antes de verificar se havia jogos cadastrados. Causa técnica: ausência de condicional externa testando `len(catalogo) == 0` antes da leitura de entrada.
+ __
+5. **Decisão de ajuste + fonte:** _Criar condicional aninhada externa verificando `if len(catalogo) == 0:` e validar faixas inválidas com `or` (`ano < 1970 or ano > 2026`). Caso de teste comprovado: entrada `ano = 1965` → esperado: erro de faixa → obtido: `"Erro: Digite um ano válido entre 1970 e 2026!"`. Fonte: DOWNEY, Allen B. *Pense em Python* 
+6. **Feedback recebido e o que mudei:** _Orientação do Ciclo 05 para registrar casos de teste (entrada → esperado → obtido) e justificar o aninhamento de condições.
+
+7. **Próximo passo:** _Implementar os laços de repetição (`while` e `for`) e controle de fluxo (`break`, `continue`)_
 
 ## 🟠 CICLO 06 — 30/09 — Devolutiva da P1 + repetição: `for`, `while`, `break`, `continue`
 
@@ -466,13 +469,15 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 06 — 30/09
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido (inclui devolutiva da P1) e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Controlar a repetição contínua do menu e a iteração sobre os jogos cadastrados usando `while`, `for`, `break` e `continue`.
+_
+2. **O que implementei (commits / arquivos / links):** Laço `while True:` no menu principal com `break` na opção `"0"`, `continue` nos erros de validação e laço `for i, jogo in enumerate(catalogo):` na listagem do `main.py` (commit: `docs(logbook): registro do ciclo 06`)
+3. **Objeto(s) de conhecimento mobilizado(s):** _Laços de repetição indefinida (`while`), laços definidos (`for` com `enumerate()`), instruções de controle de laço (`break` e `continue`).
+
+4. **Desvio ou erro encontrado + causa técnica:** _O programa encerrava por completo ao errar a digitação de uma nota ou ano, em vez de voltar ao menu. Causa técnica: uso incorreto de `break` (que interrompe o laço `while`) no lugar de `continue` (que salta para a próxima iteração)._
+5. **Decisão de ajuste + fonte:** _Manter `while True` com `break` apenas na opção `"0"`, usar `continue` em todos os tratamentos de erro e `for` para percorrer a lista de tamanho conhecido. Fonte: DOWNEY, Allen B. *Pense em Python* (Capítulo 7) e Documentação Oficial do Python (*break e continue*)._
+6. **Feedback recebido (inclui devolutiva da P1) e o que mudei:** __
+7. **Próximo passo:** _Estruturar o armazenamento dinâmico e as operações sobre a lista_
 
 ## 🟠 CICLO 07 — 07/10 — Listas: armazenamento e iteração
 
@@ -486,13 +491,16 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 07 — 07/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Armazenar e manipular dinamicamente os registros do Catálogo de Jogos em memória utilizando listas e seus métodos nativos._
+2. **O que implementei (commits / arquivos / links):** _Lista principal `catalogo = []`, inserção com `.append()`, consulta de tamanho com `len(catalogo)`, iteração com `enumerate()` e remoção por índice com `.pop(indice)` no `main.py` (commit: `docs(logbook)_
+3. **Objeto(s) de conhecimento mobilizado(s):** _Estrutura de dados mutável (`list`), indexação base zero e métodos/funções de lista (`.append()`, `.pop()`, `len()`, `enumerate()`).
+_
+4. **Desvio ou erro encontrado + causa técnica:** _Falha com `IndexError: list index out of range` ao tentar excluir ou alterar um jogo digitando o número exibido na tela. Causa técnica: a exibição ao usuário inicia em `1`, enquanto a lista em Python inicia no índice `0` e vai até `len(catalogo) - 1`._
+5. **Decisão de ajuste + fonte:** _Usar lista pela necessidade de coleção dinâmica e ordenada, subtrair `1` do índice digitado (`int(input(...)) - 1`) e validar `if indice < 0 or indice >= len(catalogo)_
+6. **Feedback recebido e o que mudei:** _Orientação para nunca remover itens de uma lista dentro de um laço `for` que a percorre, realizando a remoção pontual pelo índice validado fora da iteração.
+_
+7. **Próximo passo:** _Estruturar cada jogo como um dicionário (`chave: valor`) para organizar os atributos no Ciclo 08.
+_
 
 ## 🟠 CICLO 08 — 14/10 — Busca/consulta e introdução a dicionários e matrizes
 
@@ -507,13 +515,17 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 08 — 14/10
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _ Modelar cada jogo do catálogo como um dicionário (`titulo`, `ano`, `nota`) dentro da lista principal para acesso e edição estruturada por chave.
+_
+2. **O que implementei (commits / arquivos / links):** _Criação do dicionário `novo_jogo = {"titulo": titulo, "ano": ano, "nota": nota}`, leitura por chave na listagem (`jogo['titulo']`) e atualização direta (`catalogo[indice]["nota"] = nova_nota`) no `main.py` (commit: `docs(logbook)_
+3. **Objeto(s) de conhecimento mobilizado(s):** _Estrutura de dados associativa (`dict` — mapeamento chave-valor), composição de lista de dicionários, acesso e mutação por chave.
+_
+4. **Desvio ou erro encontrado + causa técnica:** _Erro `KeyError` ao buscar `jogo['Titulo']` e `TypeError` ao tentar acessar `catalogo["titulo"]` diretamente. Causa técnica: sensibilidade a maiúsculas/minúsculas nas chaves do dicionário e tentativa de indexar a lista externa (`list`) com string antes de selecionar o índice numérico do item.
+_
+5. **Decisão de ajuste + fonte:** _Adotar dicionários em vez de listas soltas para dar significado semântico a cada campo, padronizando todas as chaves em minúsculo (`"titulo"`, `"ano"`, `"nota"`) e indexando primeiro a lista (`catalogo[indice]`) e depois a chave (`["titulo"]`)._
+6. **Feedback recebido e o que mudei:** _Orientação do Ciclo 08 para padronizar rigorosamente o esquema de chaves dos dicionários e validar entradas antes de indexar a estrutura.
+_
+7. **Próximo passo:** _Atualizar o Painel de Acompanhamento, realizar o commit final do Grupo 2 hoje_
 
 ---
 
@@ -524,12 +536,12 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 > ⚠️ O prazo vem **um dia depois da P2 (25/11)**. Os Campos 06 e 07 dependem de todo o Logbook: deixe-os para o final, mas **adiante o rascunho do 6c e do 7a/7b antes da Defesa (18/11)**.
 
 **Checklist do Grupo 3**
-- [ ] Registros dos Ciclos 09, 10, 11 e 12 com os 7 itens
-- [ ] Campo 05: duas revisões (Ciclos 09 e 12), blocos 5a a 5e
-- [ ] Campo 06: decisão autônoma, lacuna com plano, pergunta da banca com 5 linhas ou mais
-- [ ] Campo 07: 7a a 7e, com 3 objetos, 2 equívocos corrigidos e transferência
-- [ ] Coerência entre Campo 01 e Campo 07
-- [ ] Painel de acompanhamento completo
+- [ x] Registros dos Ciclos 09, 10, 11 e 12 com os 7 itens
+- [ x] Campo 05: duas revisões (Ciclos 09 e 12), blocos 5a a 5e
+- [x ] Campo 06: decisão autônoma, lacuna com plano, pergunta da banca com 5 linhas ou mais
+- [ x] Campo 07: 7a a 7e, com 3 objetos, 2 equívocos corrigidos e transferência
+- [ x] Coerência entre Campo 01 e Campo 07
+- [x ] Painel de acompanhamento completo
 
 ## 🔵 CICLO 09 — 21/10 — Atualização e exclusão: CRUD completo
 
