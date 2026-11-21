@@ -213,19 +213,19 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 *Grupo 1 | Prazo segunda 16/11, 23h59 | SEM CONSULTA*
 
 **1a. Objetos de conhecimento identificados (mínimo 3, com vocabulário técnico):**
-1. _…_
-2. _…_
-3. _…_
+1. _…_Variáveis e tipos primitivos de dados (`str` para título do jogo, `int` para ano de lançamento e `float` para nota de avaliação
+2. _…_Instruções de entrada e saída padrão (`input()` e `print()`) e conversão explícita de tipos (*type casting* com `int()` e `float()`).
+3. _…_Estruturas de controle de fluxo: condicionais (`if`, `elif`, `else`) para validação de regras e laços de repetição (`while`) para manter o menu ativo.
 4. _…_ *(opcional)*
 
 **1b. Lacunas — o que não sei e preciso descobrir (mínimo 3, com precisão técnica):**
-1. _…_
-2. _…_
-3. _…_
+1. _…_Não sei como impedir que o programa encerre abruptamente (quebre com erro de execução) quando o usuário digitar texto ou deixar o campo vazio onde o sistema espera um número inteiro (`ano`) ou decimal (`nota`)
+2. _…_Não sei como estruturar e percorrer uma lista de dicionários para localizar, atualizar ou remover um jogo específico sem gerar erro de índice inexistente.
+3. _…_Não sei como modularizar as operações do CRUD em funções isoladas (passagem de parâmetros e retorno) nem como aplicar recursividade dentro da lógica do catálogo.
 
 **1c. Hipótese inicial em até 5 linhas — com lógica da área de formação:**
 
-> _…_
+> _…_Acredito que as falhas no CRUD ocorrem principalmente porque a função `input()` sempre retorna dados no formato texto (`str`), e a falta de validação ou conversão adequada antes de processar operações numéricas e buscas na lista provoca erros de tipo (`ValueError`/`TypeError`) e acesso a índices inválidos. Além disso, sem estruturas condicionais rigorosas para filtrar entradas vazias ou fora da faixa permitida (como anos e notas inválidas), dados inconsistentes acabam sendo armazenados na memória.
 
 ### 🧩 CAMPO 02 — Aprofundamento pós-aula
 *AV Qualis — Grupo 1 | Segunda 16/11, 23h59*
