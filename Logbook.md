@@ -396,42 +396,42 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 *AV Qualis — Grupo 2 | Sábado 21/11, 23h59*
 
 **3a. O que descobri que mudou minha compreensão do problema (mínimo 2 achados, com objeto de conhecimento associado):**
-1. _…_ — *Objeto de conhecimento:* _…_
-2. _…_ — *Objeto de conhecimento:* _…_
+1. _…_ — *Objeto de conhecimento:* _Validar apenas o tipo de dado (`int` ou `float`) não impede a entrada de dados semanticamente inválidos no catálogo (como anos fora de faixa ou notas negativas), exigindo a combinação de tratamento de exceções com operadores relacionais e lógicos de domínio. — *Objeto de conhecimento:* Tratamento de exceções (`try/except ValueError`) combinado com operadores relacionais (`<`, `>`) e lógicos (`or`)._
+2. _…_ — *Objeto de conhecimento:* _A exibição dos jogos ao usuário começa em `1`, enquanto as listas em Python são indexadas a partir de `0`, exigindo conversão aritmética (`indice - 1`) e checagem prévia dos limites da lista antes de atualizar ou excluir. — *Objeto de conhecimento:* Indexação baseada em zero em listas, operadores aritméticos (`+`, `-`) e prevenção de `IndexError`._
 3. _…_ *(opcional)*
 
 **3b. Desvio em relação ao Campo 02 (ao menos 1 — causa técnica):**
-- **Desvio:** _…_
-- **Causa técnica:** _…_
+- **Desvio:** _O planejamento inicial previa testar os casos de borda diretamente nas operações do CRUD, mas durante os testes no VS Code as alterações nas opções de atualizar (`3`) e excluir (`4`) não surtiam efeito e falhavam no fluxo._
+- **Causa técnica:** _O arquivo `main.py` não estava sendo salvo (`Ctrl + S`) antes de rodar novamente no terminal PowerShell (que mantinha a versão antiga em execução), somado a desalinhamento de indentação (4 espaços) nos blocos `elif` dentro do laço `while True`._
 
 **3c. Decisão de ajuste (ao menos 1) com justificativa e fonte:**
-- **Decisão:** _…_
-- **Fonte:** _…_
+- **Decisão:** _Padronizar a indentação de todos os blocos condicionais (`if`, `elif`, `else`) em 4 espaços, salvar o arquivo antes de cada execução (`py main.py`) e validar `if indice < 0 or indice >= len(catalogo):` antes de acessar qualquer posição da lista._
+- **Fonte:** _Documentação Oficial do Python (`docs.python.org/pt-br/3/tutorial/controlflow.html` — Estruturas de controle de fluxo) e DOWNEY, Allen B. *Pense em Python* (Capítulos 5 e 10 — Condicionais e Listas)._
 
-**Objeto de conhecimento mobilizado nesta decisão:** _…_
+**Objeto de conhecimento mobilizado nesta decisão:** _Estruturas condicionais encadeadas (`if/elif/else`), indentação em blocos Python e validação de limites de índice em listas (`len()`)._
 
 ### 🧩 CAMPO 04 — Interação com IA
 *AV Qualis — Grupo 2 | Sábado 21/11, 23h59 | OBRIGATÓRIO*
 
 > **Obrigatório e avaliado. Print sem análise crítica = devolução imediata. Reproduzir a IA sem questionamento = reprovado.**
 
-**4a. Ferramenta:** _…_  **Data:** _DD/MM/AAAA_
+**4a. Ferramenta:** _GEMINI_  **Data:** _21/11/2026
 
 **4b. Pergunta formulada (transcrita integralmente):**
 
-> _…_
+> _…Não consigo excluir, nem alterar os jogos, o que fazer ?_
 
 **4c. Resposta da IA (resumida em parágrafo):**
 
-> _…_
+> _A IA apontou que a falha ocorria por possível erro de indentação nos blocos `elif opcao == "3":` e `elif opcao == "4":` dentro do laço `while True:` e pelo fato de o terminal ainda estar executando a versão anterior do arquivo `main.py` não salva. Como solução, apresentou a implementação completa das rotinas de atualização e exclusão utilizando `enumerate(catalogo)` para exibir a lista numerada, subtração de `1` para ajustar a entrada do usuário ao índice da lista, validação de faixa com `if indice < 0 or indice >= len(catalogo):` e remoção por meio do método `catalogo.pop(indice)`._
 
 **4d. O que aceitei — com referência ao objeto de conhecimento do componente:**
 
-> _…_
+>  Aceitei o alinhamento de indentação em 4 espaços nos blocos condicionais (`elif`), o uso de `enumerate(catalogo)` para exibir índices amigáveis (`i + 1`), a validação de limites (`indice < 0 or indice >= len(catalogo)`) para evitar `IndexError` e o uso do método nativo `catalogo.pop(indice)` para remover o dicionário escolhido da lista (objetos de conhecimento: estruturas condicionais `if/elif/else`, laços de repetição `for`/`while`, listas, dicionários e tratamento de exceções `ValueError`)._
 
 **4e. O que questionei ou descartei — com argumento técnico ou fonte:**
 
-> _…_
+> _Questionei o fluxo da rotina de atualização sugerida porque ela obriga o usuário a redigitar todos os atributos (`titulo`, `ano` e `nota`) e rejeita strings vazias (`if novo_titulo == "":`), impedindo a edição parcial de apenas um campo (como corrigir só a nota). Além disso, após rodar o código no terminal, constatei que a solução mantinha toda a lógica concentrada em um único laço monolítico sem modularização em funções (`def`), o que dificulta a manutenção e será refatorado conforme a Documentação Oficial do Python (*Definindo Funções*, `docs.python.org`)._
 
 ## 🟠 CICLO 05 — 09/09 — Condicionais aninhadas e operadores lógicos
 
