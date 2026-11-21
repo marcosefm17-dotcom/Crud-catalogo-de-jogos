@@ -270,13 +270,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 03 — 26/08
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Modelar o fluxo lógico de decisão do Catálogo de Jogos por meio de fluxograma e aplicar operadores relacionais, lógicos e aritméticos para validar as regras de domínio dos dados._
+2. **O que implementei (commits / arquivos / links):** _Elaboração do fluxograma do menu e das validações de entrada, e implementação das expressões relacionais (`==`, `<`, `>`, `>=`), lógicas (`or`) e aritméticas (`+`, `-`) no arquivo `main.py` (commit: `docs(logbook): registro do ciclo 03`)._
+3. **Objeto(s) de conhecimento mobilizado(s):** _Paradigma imperativo/estruturado, representação algorítmica via fluxograma (que evidenciou a necessidade de desviar o fluxo de volta ao início do menu em caso de entrada inválida), operadores relacionais (`==` para verificar opção do menu e string vazia `""`; `<` e `>` para limites de ano e nota; `>=` para limite superior de índice), operadores lógicos (`or` para validar intervalos inválidos em uma única expressão booleana), operadores aritméticos (`+` na exibição do índice amigável `i + 1` e `-` na conversão do índice digitado `indice - 1`) e tipos de dados (`str`, `int`, `float` e `bool`)._
+4. **Desvio ou erro encontrado + causa técnica:** _Durante a escrita das condições do menu e da validação do título, ocorreu erro de sintaxe (`SyntaxError: invalid syntax`) ao escrever `if opcao = "1":` em vez de `if opcao == "1":`, além de inversão lógica inicial ao tentar validar o ano com `and` (`ano < 1970 and ano > 2026`), condição que nunca era satisfeita. Causa técnica: confusão entre o operador de atribuição (`=`) e o operador relacional de igualdade (`==`), e uso incorreto da conjunção lógica (`and`) para intervalos mutuamente exclusivos onde o correto é a disjunção (`or`)._
+5. **Decisão de ajuste + fonte:** _Substituir `=` por `==` nas comparações e corrigir as expressões de faixa inválida para `ano < 1970 or ano > 2026` e `nota < 0 or nota > 10`. Fonte: DOWNEY, Allen B. *Pense em Python* (Capítulo 5 — Condicionais e recursividade) e Documentação Oficial do Python (*Expressões e operadores*)._
+6. **Feedback recebido e o que mudei:** _Orientação das diretrizes do Ciclo 03 para mapear o fluxo de decisão antes de codificar e revisar a precedência e o sentido booleano dos operadores relacionais e lógicos antes de encadear múltiplas condições._
+7. **Próximo passo:** _Estruturar a árvore completa de decisão do menu e das validações utilizando as estruturas condicionais `if`, `elif` e `else` no Registro do Ciclo 04._
 
 ## 🟢 CICLO 04 — 02/09 — Estruturas condicionais: `if`, `elif`, `else`
 
