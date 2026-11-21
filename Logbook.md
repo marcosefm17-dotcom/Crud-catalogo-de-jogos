@@ -314,11 +314,11 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 > ⚠️ O prazo cai num **sábado**: planeje terminar na sexta. Os campos do Ciclo 03 (Checkpoint, 03 e 04) aparecem **primeiro**, porque são a base da investigação.
 
 **Checklist do Grupo 2**
-- [ ] Checkpoint Conceitual feito conforme orientação do professor (20 min, sem consulta)
-- [ ] Campo 03: 2 achados com objeto, 1 desvio com causa técnica, 1 decisão com fonte
-- [ ] Campo 04: ferramenta, pergunta íntegra, resumo, o que aceitei e o que questionei
-- [ ] Registros dos Ciclos 05, 06, 07 e 08 com os 7 itens (devolutiva da P1 no ciclo 06)
-- [ ] Commits no GitHub e painel atualizado
+- [ x] Checkpoint Conceitual feito conforme orientação do professor (20 min, sem consulta)
+- [ x] Campo 03: 2 achados com objeto, 1 desvio com causa técnica, 1 decisão com fonte
+- [x ] Campo 04: ferramenta, pergunta íntegra, resumo, o que aceitei e o que questionei
+- [ x] Registros dos Ciclos 05, 06, 07 e 08 com os 7 itens (devolutiva da P1 no ciclo 06)
+- [x ] Commits no GitHub e painel atualizado
 
 ## 🟠 CICLO 03 (campos) — 26/08 — Checkpoint, Campo 03 e Campo 04
 
@@ -351,8 +351,8 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 | | |
 |---|---|
-| **Nome do estudante** | _…_ |
-| **Data de realização** | _…_ |
+| **Nome do estudante** | _Marcos Eduardo_ |
+| **Data de realização** | _21/11/2026_ |
 | **Unidade curricular** | Algoritmos e Programação |
 | **Professor(a)** | Rondineli Seba Salomão |
 
@@ -363,21 +363,21 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 **RESPOSTA:**
 
-> _…_
+> _> Operadores relacionais (`==`, `<`, `>`) comparam valores retornando `bool`, os lógicos (`and`, `or`) combinam condições e os aritméticos (`+`, `-`) fazem cálculos numéricos. No Catálogo de Jogos, após converter `input()` de `str` para `int`/`float`, uso relacionais com `or` (`ano < 1970 or ano > 2026`) para bloquear dados fora da faixa e operadores aritméticos (`i + 1` e `indice - 1`) para alinhar a lista exibida ao índice base zero do Python, evitando `TypeError` e `IndexError`._
 
 **QUESTÃO 2** — Objeto de conhecimento: _…_
 > _(Questão elaborada pelo professor na Proposta — Apêndice A, item 6)_
 
 **RESPOSTA:**
 
-> _…_
+> _…> O fluxograma mapeia visualmente o fluxo de execução e as decisões antes do código. No Catálogo de Jogos, ele mostrou a necessidade de criar desvios para entradas inválidas (título vazio, letras no lugar de números ou índice inexistente). Isso orientou o uso do laço `while True` com condicionais `if/elif/else` e `continue`, fazendo o programa voltar ao menu sem quebrar com `ValueError` ou `IndexError`._
 
 **QUESTÃO 3** — Objeto de conhecimento: _…_
 > _(Questão elaborada pelo professor na Proposta — Apêndice A, item 6)_
 
 **RESPOSTA:**
 
-> _…_
+> _O paradigma imperativo estruturado organiza o programa em sequência, seleção (`if/elif/else`) e repetição (`while/for`), alterando o estado da memória passo a passo. No Catálogo de Jogos, cada operação do CRUD modifica ou consulta a lista de dicionários (`catalogo`) em uma ordem rigorosa — higienizando e convertendo entradas antes de salvar e checando `len(catalogo) == 0` antes de editar ou excluir — o que garante previsibilidade e facilidade de manutenção._
 
 <details>
 <summary>🔒 Uso do professor — critérios de avaliação do Checkpoint</summary>
